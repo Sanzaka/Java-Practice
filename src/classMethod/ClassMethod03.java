@@ -7,8 +7,7 @@ public class ClassMethod03 {
 		Human03 yamada = new Human03();
 
 		System.out.println("私の名前は" + yamada.name + "です。");
-		String profile = yamada.getProfile();
-		System.out.println(profile + "です。");
+		System.out.println(yamada.getProfile() + "です。");
 
 		yamada.greet("田辺");
 		yamada.greet(null);
