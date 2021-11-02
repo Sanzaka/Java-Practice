@@ -1,4 +1,4 @@
-package sukkiriNyumon.chapter02;
+package sukkiriNyumon.chapter1_02;
 
 public class Code14 {
 	public static void main(String[] args) {
