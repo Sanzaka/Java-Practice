@@ -1,6 +1,6 @@
 package sukkiriNyumon.chapter1_03;
 
-public class CodeMemo {
+public class Code_Memo {
 	public static void main(String[] args) {
 		
 		//その１
