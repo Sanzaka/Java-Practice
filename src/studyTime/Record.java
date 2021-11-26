@@ -12,11 +12,6 @@ public class Record {
 	public void start() {
 		Calendar cl = Calendar.getInstance();
 		File folder = new File("C:\\Users\\matop\\Desktop");
-
-		String time = cl.get(Calendar.YEAR);
-		if (!(folder.exists())) {
-			File file = new File("C:\\Users\\matop\\Desktop\\studyTime");
-		}
 	}
 
 	public void end() {
