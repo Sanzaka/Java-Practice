@@ -7,11 +7,18 @@ import java.nio.file.Paths;
 import java.util.Calendar;
 
 public class Record {
-
+	Time t = new Time();
+	Create c = new Create();
 
 	public void start() {
-		Calendar cl = Calendar.getInstance();
-		File folder = new File("C:\\Users\\matop\\Desktop");
+		//年、月が記載されたフォルダが存在しなければ作成
+		String year = t.getYear();
+		String month = t.getMonth();
+
+		c.createFolder(year, month);
+
+		//
+
 	}
 
 	public void end() {
@@ -41,7 +48,7 @@ public class Record {
 			Path path1 = Paths.get(folder + "\\" + year + "/" + month);
 			Files.createDirectoies(path1);
 			try {
-				
+
 			}catch(IOException e){
 				System.out.println(e);
 			}
