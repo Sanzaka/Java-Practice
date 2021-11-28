@@ -12,6 +12,11 @@ public class Time {
 
 	public String getMonth() {
 		String month = Integer.toString(cl.get(Calendar.MONTH));
+		
+		//ファイル順をそろえるため、ファイル名が一桁なら文字列先頭に0を追加
+		if (month.length() == 1) {
+			month = "0" + month;
+		}
 		return month;
 	}
 

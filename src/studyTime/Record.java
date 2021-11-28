@@ -7,17 +7,18 @@ import java.nio.file.Paths;
 import java.util.Calendar;
 
 public class Record {
-	Time t = new Time();
-	Create c = new Create();
+	Time time = new Time();
+	Create create = new Create();
 
-	public void start() {
+	public void start() throws IOException {
 		//年、月が記載されたフォルダが存在しなければ作成
-		String year = t.getYear();
-		String month = t.getMonth();
+		String year = time.getYear();
+		String month = time.getMonth();
 
-		c.createFolder(year, month);
+		create.createFolder(year);
+		create.createFile(year, month);
 
-		//
+
 
 	}
 

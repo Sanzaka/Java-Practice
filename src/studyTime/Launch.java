@@ -14,6 +14,6 @@ public class Launch {
 		
 		String inputChar = scanner.nextLine();
 		
-		return inputText;
+		return inputChar;
 	}
 }
