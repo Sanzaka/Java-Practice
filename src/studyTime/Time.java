@@ -4,9 +4,12 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class Time {
+	//今日の日付の取得
 	Calendar cl = Calendar.getInstance();
 	SimpleDateFormat sdf = new SimpleDateFormat("MM/dd　HH:mm");
 	String currentTime = sdf.format(cl.getTime());
+	//前回の日付の取得
+
 
 	public String getYear() {
 		String year = Integer.toString(cl.get(Calendar.YEAR));
@@ -48,5 +51,14 @@ public class Time {
 		return second;
 	}
 
+	//以下、前回日付の参照。
+//	public int getLastTime() {
+//		ArrayList<String> array = data.textContents();
+//		if (array.size() == 0) {
+//			return 0;
+//		}
+//		String lastTime = array.get(array.size() - 4);
+//
+//	}
 
 }

@@ -25,8 +25,14 @@ public class Data {
 		return array;
 	}
 
-//	public ArrayList<String> getStudyTime() {
-//		ArrayList<String> array = textContents();
-//
-//	}
+	public int getLastTime() {
+
+		ArrayList<String> array = textContents();
+		if (array.size() == 0) {
+			return 0;
+		}
+		String lastTimeLine = array.get(array.size() - 4);
+		String lastTime = lastTimeLine.substring(lastTimeLine.length() - 11);
+
+	}
 }

@@ -23,27 +23,12 @@ public class Record {
 	public void setStart() {
 		File writingFile = new File(monthFile);
 
-
-
-
-		//try-with-resources文で、finallyを省略
-//		try (FileReader fr = new FileReader(writingFile);){
-//			//記述前に、前回実行したのがstartでないかを確認する
-//			BufferedReader br = new BufferedReader(fr);
-//			String text;
-//			while ((text = br.readLine()) != null) {
-//				System.out.println(text);
-//			}
-//		} catch (IOException e) {
-//			System.out.println(e);
-//		}
-
 		//実際に記述する
 		try(FileWriter fl = new FileWriter(writingFile, true);) {
 			BufferedWriter bw = new BufferedWriter(fl);
 			//ファイル記述部分
 			bw.newLine();
-			bw.write("start　　" + time.currentTime + "～");
+			bw.write("start　　" + time.currentTime);
 			bw.newLine();
 			bw.newLine();
 			bw.newLine();
@@ -53,9 +38,6 @@ public class Record {
 		} catch (IOException e) {
 			System.out.println(e);
 		}
-
-
-
 	}
 
 	public void setEnd() {
@@ -65,7 +47,7 @@ public class Record {
 			BufferedWriter bw = new BufferedWriter(fl);
 			//ファイル記述部分
 			bw.newLine();
-			bw.write("end　　　～" + time.currentTime);
+			bw.write("end　　　" + time.currentTime);
 			bw.newLine();
 			bw.newLine();
 			bw.newLine();
@@ -75,7 +57,6 @@ public class Record {
 		} catch (IOException e) {
 			System.out.println(e);
 		}
-
 	}
 
 	public void revision() {
