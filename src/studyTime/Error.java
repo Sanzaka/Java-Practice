@@ -5,6 +5,5 @@ public class Error {
 		System.out.println("\nエラー発生\n" + errText);
 
 		//Check処理をループさせる
-		Launch.check();
 	}
 }

@@ -51,14 +51,33 @@ public class Time {
 		return second;
 	}
 
-	//以下、前回日付の参照。
-//	public int getLastTime() {
-//		ArrayList<String> array = data.textContents();
-//		if (array.size() == 0) {
-//			return 0;
-//		}
-//		String lastTime = array.get(array.size() - 4);
-//
-//	}
+	//月、日、時間、分の順で格納された配列を、分数にして返す
+	
+	
+	public int getTotalMinute(Integer[] array) {
+		int totalMinute = 0;
+		for (int i = 0; i < array.length; i++) {
+			if (i == 0) {
+				//月を分数に
+				totalMinute += (array[i] * 43200);
+			} else if (i == 1) {
+				//日を分数に
+				totalMinute += (array[i] * 1440);
+			} else if (i == 2) {
+				//時間を分数に
+				totalMinute += (array[i] * 60);
+			} else if (i == 3) {
+				//分をそのまま加算
+				totalMinute += array[i];
+			}
+		}
+		return totalMinute;
+	}
+	
+	//分数を、MM/dd　HH:mmの形式にして返す
+	public String getElapsedTime(int minute) {
+		int elapsedTime = 0;
+
+	}
 
 }
