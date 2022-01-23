@@ -1,27 +1,52 @@
 package uno;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class Player {
-	ArrayList<ArrayList<String>> hands = new ArrayList<ArrayList<String>>();
-
+	ArrayList<String> hands = new ArrayList<String>();
 	Random random = new Random();
 
 	public void draw() {
-		for (int i = 0; i < 100; i++) {
-
-			ArrayList<String> card = new ArrayList<String>();
 			//4色、13種類の数字
-			String[] color = {"red", "green", "yellow", "blue"};
-			card.add(color[random.nextInt(4)]);
-			String cardNum = String.valueOf(random.nextInt(13)+1);
-			card.add(cardNum);
-			//手札に追加
-			this.hands.add(card);
+			//color = 赤、緑、黄色、青
+			String[] color = {"\u001b[00;31m", "\u001b[00;32m", "\u001b[00;33m", "\u001b[00;34m"};
+			String end = "\u001b[00m";
 
-		}
-		System.out.println(hands.toString());
+			int cardNum = random.nextInt(25)+1;
+			if(cardNum > 12) {
+				cardNum -= 12;
+			}
+
+			String cardCts = String.valueOf(cardNum);
+
+			//特殊カード割り当て
+			switch(cardCts) {
+			case("10"):
+				cardCts = "Skip";
+				break;
+			case("11"):
+				cardCts = "Draw2";
+				break;
+			case("12"):
+				cardCts = "Reverse";
+				break;
+			case("13"):
+				cardCts = "Wild";
+				break;
+			}
+			//wildは黒色で表示
+			if (cardCts.equals("Wild")) {
+				hands.add(cardCts);
+			} else {
+			//wild以外は各色表示
+				hands.add(color[random.nextInt(4)]
+						+ cardCts
+						+ end);
+			}
+			//整列表示
+			Collections.sort(hands);
 
 	}
 }
