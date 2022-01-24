@@ -11,7 +11,7 @@ public class Player {
 	public void draw() {
 			//4色、13種類の数字
 			//color = 赤、緑、黄色、青
-			String[] color = {"\u001b[00;31m", "\u001b[00;32m", "\u001b[00;33m", "\u001b[00;34m"};
+			String[] color = {"\u001b[00;41m \u001b[00;30m", "\u001b[00;42m \u001b[00;30m", "\u001b[00;43m \u001b[00;30m", "\u001b[00;44m \u001b[00;30m"};
 			String end = "\u001b[00m";
 
 			int cardNum = random.nextInt(25)+1;
@@ -49,4 +49,13 @@ public class Player {
 			Collections.sort(hands);
 
 	}
+
+	public void choice(Player p, Field f) {
+//		System.out.println("出すカードを選択してください");
+//
+//		//出せるカードと出せないカードを分けて表示
+//		for (String card : p.hands) {
+//			if (card == )
+//		}
+  	}
 }

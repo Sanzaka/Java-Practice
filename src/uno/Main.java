@@ -34,6 +34,10 @@ public class Main {
 			System.out.println(cpu[i].hands.toString());
 		}
 
+
+		//場のカードを表示
+		Field field = new Field();
+		field.firstCard();
 	}
 }
 
